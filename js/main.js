@@ -74,7 +74,7 @@ app = {
         // playlist.html('<li>Nhựt</li>')
         var html = app.songs.map(function (v,i) {
             return `
-            <li class="playlist-item active"  data-index='${i}'>
+            <li class="playlist-item ${i === app.currentIndex ? 'active' : ''}"  data-index='${i}'>
                 <div class="playlist-item-info">
                     <h3 class="playlist-item-song-name">${v.songName}</h3>
                     <h4 class="playlist-item-singer-name">${v.singer}</h4>
@@ -120,7 +120,6 @@ app = {
         $("#slider").change(function() {
             var obj = $("#slider").data("roundSlider");
             var testvalue = obj.getValue(1);
-            console.log(testvalue)
             audio.currentTime = Math.floor((audio.duration/100)*testvalue)
         })
         
@@ -145,13 +144,14 @@ app = {
             app.loadCurrentSong()
             audio.play()
             playBtn.addClass('active')
+            app.render()
         })
         // bấm prev 
         $('.btn-prev').click(function() {
             app.prevSong()
             app.loadCurrentSong()
             audio.play()
-            console.log(app.currentIndex)
+            app.render()
         })
         // audio on ended
         audio.onended = function() {
@@ -174,6 +174,17 @@ app = {
             }else {
                 audio.loop = false
                 $('.player__cd-loop').removeClass('active')
+            }
+        })
+        // Khi click nhạc trong danh sách
+        $('.playlist').click(function(e) {
+            playlistItem = e.target.closest('.playlist-item:not(.active)')
+            if(playlistItem) {
+                app.currentIndex = Number(playlistItem.dataset.index)
+                app.render()
+                app.loadCurrentSong()
+                audio.play()
+                playBtn.addClass('active')
             }
         })
     },
