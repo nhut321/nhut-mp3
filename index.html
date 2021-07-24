@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="themify-icons/themify-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="player">
+            <div class="player__hambur">
+                <i class="btn ti-view-list"></i>
+            </div>
+            <div class="player__header">
+                <h4 class="player__header-now">Now playing</4>
+            </div>
+            <div class="player__cd">
+                <div class="player__cd-random">
+                    <i class="btn ti-control-shuffle"></i>
+                </div>
+                <div class="player__cd-loop">
+                    <i class="btn ti-loop"></i>
+                </div>
+                <div class="player__cd-img">
+                    <img src="img/song-1.jpg" alt="">
+                </div>
+                <div class="player__cd-range">
+                    <div id="slider"></div>
+                </div>
+            </div>
+            <audio src="" id="audio"></audio>
+            <div class="player__info">
+                <h3 class="player__info-song-name">Tên bài hát</h3>
+                <h4 class="player__info-singer-name">Tên ca sĩ</h4>
+            </div>
+            <div class="player__controls">
+                <div class="btn btn-volume">
+                    <i class="ti-volume"></i>
+                    <input type="range" name="" id="volume" value="20" min="0" max="100" step="1">
+                </div>
+                <div class="btn btn-prev">
+                    <i class="ti-control-skip-backward"></i>
+                </div>
+                <div class="btn btn-play">
+                    <i class="ti-control-play"></i>
+                    <i class="ti-control-pause"></i>
+                </div>
+                <div class="btn btn-next">
+                    <i class="ti-control-skip-forward"></i>
+                </div>
+            </div>
+            <ul class="playlist">
+                <li class="playlist-item">
+                    <div class="playlist-item-info">
+                        <h3 class="playlist-item-song-name">Tên bài hát</h3>
+                        <h4 class="playlist-item-singer-name">Tên ca sĩ</h4>
+                    </div>
+                    <div class="playlist-item-play">
+                        <div class="btn btn-play-2">
+                            <i class="ti-control-play"></i>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

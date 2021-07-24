@@ -1,0 +1,287 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #73cff9;
+}
+
+.main {
+    height: 750px;
+    background: linear-gradient(225deg, rgba(0,254,255,1) 0%, rgba(244,35,162,1) 100%);
+}
+
+/* thanh cuộn */
+/* Width */
+::-webkit-scrollbar {
+    width: 0px;
+  }
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+/* end thanh cuộn */
+/* font-family: 'Noto Sans JP', sans-serif; cho tên bài hát */
+/* font-family: 'Roboto', sans-serif; tên ca sĩ và chữ cho web */
+
+/* Section Thanh trượt range :)) */
+#slider {
+    position: absolute;
+    top: 145px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    z-index: 1;
+}
+.rs-control .rs-range-color {
+    background-color: #ff006e;
+    /* box-shadow: 0px 2px 19px 6px #ff006e; */
+}
+.rs-control .rs-path-color {
+    background-color: gray;
+}
+.rs-control .rs-handle {
+    background-color: #ff006e;
+    box-shadow: 0px 2px 19px 6px #ff006e;;
+
+}
+.rs-control .rs-bg-color {
+    background-color: #0b1a2f;
+}
+
+.rs-handle.rs-move {
+    cursor: pointer;
+}
+
+/* .rs-inner-container {
+    border-radius: 50%;
+} */
+
+/* End section range */
+
+
+/* Player */
+.player {
+    width: 417px;
+    min-height: 600px;
+    background-color: #0b1a2f;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.player__hambur {
+    margin: 25px 0 0 25px;
+    font-size: 20px;
+    position: absolute;
+}
+
+.player__hambur2 {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+}
+
+
+
+/* header */
+.player__header {
+    margin: 28px 0;
+    text-align: center;
+}
+
+.player__cd {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.player__cd-img {
+    position: relative;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.player__cd-img img {
+    border: 18px solid black;
+    border-radius: 50%;
+    width: 255px;
+}
+
+.player__cd-img::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    border: 10px solid #ff006e;
+}
+
+/* player info */
+.player__info {
+    margin: 80px 0 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Player control */
+.player__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px auto;
+    width: 35%;
+    position: relative;
+}
+
+.btn {
+    font-size: 22px;
+    cursor: pointer;
+    /* box-shadow: 0px 2px 19px 6px white; */
+}
+
+.btn-volume {
+    position: absolute;
+    left: -83px;
+}
+
+#volume {
+    position: absolute;
+    transform: rotate(270deg);
+    left: -54px;
+    top: -85px;
+    height: 2px;
+    display: none;
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+.ti-volume::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background-color: transparent;
+    left: 2px;
+    bottom: 0;
+    top: -23px;
+}
+
+#volume::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: #ff006e; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%;
+    box-shadow: 0px 2px 15px 6px #ff006e;
+  }
+
+.btn-volume:hover #volume {
+    display: block;
+}
+
+i.ti-control-shuffle {
+    position: absolute;
+    left: 0;
+    bottom: -40px;
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+.player__cd-random.active i.ti-control-shuffle {
+    color: #ff006e;
+}
+
+i.ti-loop {
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    margin-right: 50px;
+    font-weight: bold;
+}
+
+.player__cd-loop.active i.ti-loop {
+    color: #ff006e;
+}
+
+i[attribute*='ti-'] {
+    box-shadow: 0px 2px 19px 6px white;
+}
+
+.btn-play.active .ti-control-pause {
+    display: block;
+}
+
+.btn-play.active .ti-control-play {
+    display: none;
+}
+
+.ti-control-pause {
+    display: none;
+}
+
+.btn-play {
+    font-size: 50px;
+}
+
+/* Playlist */
+.playlist {
+    padding: 0 10px;
+    width: 100%;
+    overflow: scroll;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #0b1a2f;
+    z-index: 3;
+    transform: translateX(-100%);
+    transition: 0.7s;
+}
+
+.playlist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.playlist-item.active {
+    background-color: #ff006e;
+}
+
+.playlist-item.active .playlist-item-info h3 {
+    color: white;
+}
